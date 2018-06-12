@@ -88,3 +88,10 @@ ggplot(DATA[seq(1,.N,3),]) + #Plot every 3rd point to make it faster
   aes(x = Time, y = Displacement, colour = File) + #colour each file
   geom_line() + #plot as a line
   theme(legend.position = "none") #hide the legend since our file names are long
+
+## Zoom in on the first few seconds to see what is happening
+ggplot(DATA[]) +
+  aes(x = Time, y = Displacement, colour = File) + #colour each file
+  geom_line() + #plot as a line
+  xlim(-1,5) +
+  theme(legend.position = "none") #hide the legend since our file names are long
